@@ -1,3 +1,5 @@
+#Soma dos digitos até len() = 1
+
 num = input()
 
 ans = 0

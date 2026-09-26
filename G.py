@@ -1,3 +1,5 @@
+#Maior divisor comum
+
 import math as m
 import sys
 input = sys.stdin.readline

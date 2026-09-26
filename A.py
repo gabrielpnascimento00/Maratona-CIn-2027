@@ -1,3 +1,5 @@
+#Qual o número que falta na sequencia de 1 até n
+
 import sys
 input = sys.stdin.readline
 

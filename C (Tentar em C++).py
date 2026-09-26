@@ -1,3 +1,5 @@
+#Questão da corrida (time C) arrays lexicamente menores
+
 import sys
 input = sys.stdin.readline
 
