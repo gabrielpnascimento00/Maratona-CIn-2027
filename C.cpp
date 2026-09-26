@@ -14,7 +14,7 @@ int main() {
     for (int i = 0; i < n; i++){
         cin >> arrA[i];
     }
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < m; i++){
         cin >> arrB[i];
     }
 
@@ -34,12 +34,12 @@ int main() {
         }
     }
 
-    if (a - (n - 1) != 0){
-        for (a; a < n; a++){
+    if (a - n != 0){
+        for (int i = a; i < n; i++){
             ans += 'A';
         }
     } else {
-        for (b; a < n; a++){
+        for (int i = b; i < m; i++){
             ans += 'B';
         }
     }
