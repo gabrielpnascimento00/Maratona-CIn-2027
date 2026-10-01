@@ -40,9 +40,9 @@ int main(){
 
             lim_d = i;
 
-            int sub_esq = meio - lim_e; //Calcula a qte de subconjuntos em que o elemento é o menor (considerando os n à esquerda)
-            int sub_dir = lim_d - meio; //Calcula a qte de subconjuntos em que o elemento é o menor (considerando os n à direita)
-            
+            long long sub_esq = meio - lim_e; //Calcula a qte de subconjuntos em que o elemento é o menor (considerando os n à esquerda)
+            long long sub_dir = lim_d - meio; //Calcula a qte de subconjuntos em que o elemento é o menor (considerando os n à direita)
+
             long long total = sub_dir * sub_esq;
             resultado_soma += (total * arr[meio]);
         }
