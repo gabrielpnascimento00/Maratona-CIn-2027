@@ -19,9 +19,14 @@ int main(){
         } else {
             if (a != k - a){
                 ocor[a] = i;
+                cout << ocor[k - a] + 1 << " " << ocor[a] + 1;
+                achou = true;
+            } else {
+                cout << ocor[a] + 1 << " ";
+                ocor[a] = i;
+                cout << ocor[a] + 1;
+                achou = true;
             }
-            cout << ocor[k - a] + 1 << " " << ocor[a] + 1;
-            achou = true;
             break;
         }
     }
