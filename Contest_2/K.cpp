@@ -28,14 +28,18 @@ int main(){
     long long x = 1;
     long long n_dorm;
 
-    // 1 5 9 12
-    //1 4 7
     for (long long i = 0; i < c; i++){
         cin >> n_dorm;
         if ((n_dorm < lim_dorm[x]) || (x == d)){
             cout << x << " " << (n_dorm - (lim_dorm[x - 1] - 1)) << endl;
         } else {
-            x++;
+            while (n_dorm >= lim_dorm[x]){
+                if (x == d){
+                    break;
+                }
+                x++;
+
+            }
             cout << x << " " << (n_dorm - (lim_dorm[x - 1] - 1)) << endl;
         }
     }
