@@ -1,69 +1,51 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define all(a) (a).begin(), (a).end()
 #define endl '\n'
+#define ll long long
 
 int main(){
 
     ios_base::sync_with_stdio(false);
     cin.tie(0);
 
-    int n, k; cin >> n >> k;
+    int n;
+    ll k;
+    cin >> n >> k;
 
-    map<int, int> nums;
+    vector<pair<ll, int>> num_pos;
 
     for (int i = 0; i < n; i++){
-        bool achou = false;
-        int a; cin >> a;
-
-        int nec = k - a;
-
-        int x1, x2;
-
-        if (nec % 2 == 0){
-            x1 = nec/2;
-            x2 = x1;
-        } else {
-            x1 = nec/2;
-            x2 = x1 + 1;
-        }
-        
-        int k = max(x1, x2);
-
-        for (int j = 0; j < k; j++){
-            if (x1 != x2){
-            if ((nums.find(x1) != nums.end()) && (nums.find(x2) != nums.end())){
-                if (nums.find(a) == nums.end()){
-                    nums[a] = i;
-                    cout << nums[a] + 1 << " " << nums[x1] + 1 << " " << nums[x2] + 1;
-                    achou = true;
-                } else {
-                    cout << nums[x1] + 1 << " " << nums[x2] + 1 << " ";
-                    nums[a] = i;
-                    cout << nums[a] + 1;
-                }
-                }
-            } else {
-                auto it = nums.find(x1);
-                if (it != nums.end()){
-                    int valor = nums[x1];
-                    nums.erase(it);
-                    if (nums.find(x2) != nums.end()){
-                        cout << nums[a] + 1 << nums[x2] + 1 << valor + 1;
-                    } else {
-                        nums[x1] = valor;
-                    }
-
-                }
-            }
-            x1--;
-            x2++;
-        }
-
-        if (!achou){
-            nums[a] = i;
-        }
-    
+        ll a; cin >> a;
+        num_pos.push_back({a, i + 1});
     }
+
+    sort(all(num_pos));
+
+    for (int i = 0; i < n; i++){ //Ponteiro 1
+        int l = i + 1; //Ponteiro 2
+        int r = n - 1; //Ponteiro 3
+
+        ll falta = k - num_pos[i].first; //first é o valor
+
+        while (l < r){ //O ponteiro 2 vai andando ate o ponteiro 3, ou ate achar a soma desejada
+            ll soma_atual = num_pos[l].first + num_pos[r].first;
+
+            if (soma_atual == falta){
+                cout << num_pos[l].second << " " << num_pos[r].second << " " << num_pos[i].second;
+                return 0;
+            }
+
+            if (soma_atual > falta){
+                r--;
+            } else {
+                l++;
+            }
+        }
+
+    }
+
+    cout << "IMPOSSIBLE";
 
     return 0;
 }

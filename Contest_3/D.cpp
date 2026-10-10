@@ -13,7 +13,7 @@ int main(){
 
     vector<ll> nums;
 
-    while(n--){
+    for (int i = 0; i < n; i++){
         ll a; cin >> a;
         nums.push_back(a);
     }
@@ -22,11 +22,13 @@ int main(){
 
     ll med;
 
-    if (nums.size() % 2 == 0){
-        med = nums[nums.size()/2];
-    }
+    med = nums[nums.size()/2];
 
     ll ans = 0;
+
+    for (int i = 0; i < n; i++){
+        ans += abs(med - nums[i]);
+    }
 
     cout << ans;
 
