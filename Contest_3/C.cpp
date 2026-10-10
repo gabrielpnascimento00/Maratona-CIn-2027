@@ -51,8 +51,8 @@ int main(){
 
     ll l, r; cin >> l >> r;
 
-    ll x = busca_binaria_li(1, l/2 + 1, l);
-    ll y = busca_binaria_ls(1, r/2 + 1, r);
+    ll x = busca_binaria_li(1, 2000000, l);
+    ll y = busca_binaria_ls(1, 2000000, r);
 
     ll ans = y - (x - 1);
     cout << ans;
