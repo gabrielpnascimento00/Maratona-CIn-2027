@@ -73,15 +73,21 @@ int main(){
     }
 
     auto dist_diam = BFS(v_diam, n, adj);
-    auto d_diam = max_element(all(dist_diam));
-    auto extr3 = d_diam - dist_diam.begin();
+
+    int extr3 = -1;
+
+    //Trata o caso de a arvore toda fazer parte do diametro
+    for (int v = 1; v <= n; v++){
+        if ((v == extr1) or (v == extr2)){continue;}
+        if ((extr3 == -1) or (dist_diam[v] > dist_diam[extr3])){
+            extr3 = v;
+        }
+    }
 
     cout << diametro + dist_diam[extr3] << endl;
     cout << extr1 << " " << extr2 << " " << extr3 << endl;
 
     //Fazer o calculo da terceira extremidade e somar a sua distancia ate o diametro com o diametro para pegar todos as edges que cobrem a conexao dos 3
-
-
 
     return 0;
 }
