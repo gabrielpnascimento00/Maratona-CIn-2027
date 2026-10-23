@@ -8,17 +8,29 @@ map<char, int> dep;
 
 string topo_sort(){
 
+    string ans;
     queue<char> fila;
 
-    for (char letra : letras){
+    for (char letra : letras){ //Isso adiciona todas as letras com dependencia 0 (contam tanto as que nao recebem "seta" no grafo de ninguem quanto as que nem aparecem no grafo)
         if (dep[letra] == 0){
             fila.push(letra);
         }
     }
 
     while(!fila.empty()){
-        
+        char l = fila.front();
+        ans += l;
+        fila.pop();
+
+        for (char letra : adj[l]){
+            dep[letra]--;
+
+            if (dep[letra] == 0){
+                fila.push(letra);
+            }
+        }
     }
+    return ans;
 }
 
 int main(){
@@ -53,6 +65,14 @@ int main(){
         }
 
         prim_p = seg_p;
+    }
+
+    string resposta = topo_sort();
+
+    if (resposta.size() < 26){ //Quer dizer que faltou alguma letra ser adicionada na ordem alfabetica personalizada
+        cout << "Impossible";
+    } else {
+        cout << resposta;
     }
 
     return 0;
