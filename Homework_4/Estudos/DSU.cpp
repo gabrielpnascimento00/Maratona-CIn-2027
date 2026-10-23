@@ -2,10 +2,12 @@
 using namespace std;
 #define endl '\n'
 
-struct DSU{
-    vector<int> pai, size;
+//Resolve: tamanho de componentes conexos, conexoes faltantes para tudo ficar conectado, separar em grupos de componentes diferentes
 
-    DSU(int n) : pai(n + 1), size(n + 1, 1){
+struct DSU{
+    vector<int> pai, tamanho;
+
+    DSU(int n) : pai(n + 1), tamanho(n + 1, 1){
         for (int i = 0; i <= n; i++){
             pai[i] = i; //Inicializa todos os pais como os proprios vertices
         }
@@ -21,11 +23,11 @@ struct DSU{
         b = find(b);
 
         if (a == b) {return false;}
-        if (size[a] < size[b]){ //Trata valores pra a ser sempre o maior
+        if (tamanho[a] < tamanho[b]){ //Trata valores pra a ser sempre o maior
             swap(a, b);
         }
         pai[b] = a;
-        size[a] += size[b];
+        tamanho[a] += tamanho[b];
         return true; 
     }
 };

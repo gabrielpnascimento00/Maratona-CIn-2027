@@ -3,6 +3,8 @@ using namespace std;
 #define endl '\n'
 #define ll long long
 
+//Resolve: Distancia de todos os vertices ate o inicio com o menor peso
+
 const ll INF = 1e18;
 
 void dijkstra(int inicio, vector<vector<pair<ll, int>>>& adj, vector<int>& dist){

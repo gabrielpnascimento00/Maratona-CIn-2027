@@ -4,6 +4,8 @@ using namespace std;
 #define ll long long
 #define for(i, x) for(int i = 1; i <= x; i++)
 
+//Menor distancia entre dois vertices em geral (n pequeno (max 1000))
+
 const ll INF = 1e18;
 
 void floyd_warshall(int n_ver, vector<vector<ll>>& dist){
