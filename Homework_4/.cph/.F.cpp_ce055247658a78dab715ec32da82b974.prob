@@ -1,0 +1,1 @@
+{"name":"Local: F","url":"/home/CIN/gpn/Maratona-CIn-2027/Homework_4/F.cpp","tests":[{"id":1792782499525,"input":"7\n1 2\n2 3\n3 1\n4 5\n5 6\n6 7","output":""},{"id":1792782600841,"input":"2\n1 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/CIN/gpn/Maratona-CIn-2027/Homework_4/F.cpp","group":"local","local":true}
