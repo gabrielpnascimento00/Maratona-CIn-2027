@@ -10,63 +10,40 @@ int main(){
     int t; cin >> t;
 
     while(t--){
-        
-        pair<pair<int, int>, int> maior_dist1;
-
         int tam; cin >> tam;
-        int um = -1;
-        int uns = 0;
-        vector<int> nums;
-        string ans;
 
-        for (int i = 0; i < tam; i++){
-            int a; cin >> a;
-            nums.push_back(a);
+        vector<int> num (tam + 1);
+        bool achou_um = false;
+        int ultimo = 0;
 
-            if (i){
-                ans += " ";
+        for (int i = 1; i <= tam; i++){
+            cin >> num[i];
+
+            if (num[i] == 1){
+                achou_um = true;
+                num[ultimo] = 0;
             }
-
-            ans += to_string(a);
-
-            if (um != -1 && a == 1){
-                maior_dist1 = {{um, i}, i - (um - 1)};
-                um = i;
-                uns++;
-            }
-
-            if (a == 1){
-                um = i;
-                uns++;
+            if (num[i] == -1 && !achou_um){
+                num[i] = 1;
+                achou_um = true;
+            } else if (num[i] == -1 && achou_um){
+                num[ultimo] = 0;
+                ultimo = i;
             }
         }
 
-        if (uns == 0){
-            for (int i = 0; i < nums.size(); i++){
-                if (nums[i] == -1){
-
-                    if (i != 0){
-                        ans[i + 1] = '1';
-                    } else {
-                        ans[0] = '1';
-                    }
-                    break;
-                }
-            }
-
-            for (int i = nums.size() - 1; i >= 0; i--){
-                if (nums[i] == -1){
-
-                    if (i != 0){
-                        ans[i + 1] = '1';
-                    } else {
-                        ans[0] = '1';
-                    }
-
-                    break;
-                }
-            }
+        if (num[ultimo] == -1){
+            num[ultimo] = 1;
         }
+        
+        for (int i = 1; i <= tam; i++){
+            if (i != 1) cout << " ";
+
+            cout << num[i];
+        }
+
+        cout << endl;
+
     }
 
     return 0;

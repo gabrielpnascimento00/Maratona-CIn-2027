@@ -11,7 +11,7 @@ int main(){
 
     vector<int> ordem;
     vector<queue<int>> filas (f + 1);
-    vector<char> atendido(p + 1, 0);
+    vector<bool> atendido(p + 1, false);
     set<int> tristes;
     int lim = 0;
 
@@ -25,7 +25,7 @@ int main(){
         } else if (info1 == 2){
             int idx = filas[info2].front();
             filas[info2].pop();
-            atendido[idx] = 1;
+            atendido[idx] = true;
 
             for (; lim < idx; lim++){
                 if (!atendido[lim]) tristes.insert(ordem[lim]);
