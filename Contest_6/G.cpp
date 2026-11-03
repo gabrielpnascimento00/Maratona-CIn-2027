@@ -12,7 +12,23 @@ int main(){
 
     for (int i = 0; i < n; i++){
         int num; cin >> num;
+        nums[num] = true;
     }
+
+    int an = 0;
+
+    while (an < n){
+        if (nums.find(an) != nums.end()){
+            an++;
+        } else if ((n - an > 0) && (k > 0)){
+            k--;
+            an++;
+        } else {
+            break;
+        }
+    }
+
+    cout << an << endl;
 
     return 0;
 }

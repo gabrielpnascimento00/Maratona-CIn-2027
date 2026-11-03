@@ -16,11 +16,11 @@ int main(){
     vector<vector<int>> dp(tam1 + 1, vector<int> (tam2 + 1));
 
     for (int k = 0; k <= tam1; k++){dp[k][0] = k;} //Casos base (palavra inteira, prefixo vazio)
-    for (int l = 0; l <= tam1; l++){dp[0][l] = l;} //Casos base (prefixo vazio, palavra inteira)
+    for (int l = 0; l <= tam2; l++){dp[0][l] = l;} //Casos base (prefixo vazio, palavra inteira)
 
     for (int i = 1; i <= tam1; i++){
         for (int j = 1; j <= tam2; j++){
-            if (a[i - 1] == b[j - 1]){
+            if (a[i - 1] == b[j - 1]){ //Olha se as letras sao iguais (-1 pq os indices (i, j) estao em fator de 1, mas pra ver na string esta em fator de 0)
                 dp[i][j] = dp[i - 1][j - 1];
             } else {
                 dp[i][j] = min({1 + dp[i - 1][j - 1], 1 + dp[i - 1][j], 1 + dp[i][j - 1]});
