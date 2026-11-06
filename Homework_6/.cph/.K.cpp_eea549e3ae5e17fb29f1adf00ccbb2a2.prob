@@ -1,0 +1,1 @@
+{"name":"Local: K","url":"/home/CIN/gpn/Maratona-CIn-2027/Homework_6/K.cpp","tests":[{"id":1793965180154,"input":"2 2 1\n1 1\n2 1 1","output":"3"},{"id":1793965189080,"input":"4 3 2\n1 2 3 4\n2 1 5\n3 4 2","output":"12"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/CIN/gpn/Maratona-CIn-2027/Homework_6/K.cpp","group":"local","local":true}
