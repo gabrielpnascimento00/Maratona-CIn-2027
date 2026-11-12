@@ -23,8 +23,6 @@ int main(){
         }
     }
 
-    cout << primos.size() << endl;
-
     int t; cin >> t;
     bool achou = false;
     while(t--){
@@ -32,11 +30,11 @@ int main(){
         num++;
         achou = false;
         while (true){
+            if (num < 2){num++; continue;}
             
-            for (int prim : primos){
+            for (ll prim : primos){
                 if (prim * prim > num){cout << num << endl; achou = true; break;}
-                if (num % prim == 0){num++; break;}
-
+                if (num % prim == 0) {num++; break;}
             }
 
             if (achou){break;}
