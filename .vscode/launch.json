@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/CIN/gpn/Maratona-CIn-2027/Homework_5",
-      "program": "/home/CIN/gpn/Maratona-CIn-2027/Homework_5/build/Debug/outDebug",
+      "cwd": "/home/CIN/gpn/Maratona-CIn-2027/Contest_8",
+      "program": "/home/CIN/gpn/Maratona-CIn-2027/Contest_8/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
