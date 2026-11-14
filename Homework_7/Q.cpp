@@ -8,16 +8,16 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(0);
 
-    vector<bool> primo (1e6 + 1, true);
+    vector<bool> primo (2e6 + 1, true);
 
     vector<ll> primos;
 
     primo[0] = primo[1] = false;
 
-    for (int i = 1; i <= 1e6; i++){
+    for (int i = 1; i <= 2e6; i++){
         if (primo[i]){
             primos.push_back(i);
-            for (int j = i; j <= 1e6; j += i){
+            for (int j = i; j <= 2e6; j += i){
                 primo[j] = false;
             }
         }
