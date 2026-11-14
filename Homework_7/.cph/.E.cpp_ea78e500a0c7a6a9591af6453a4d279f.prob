@@ -1,0 +1,1 @@
+{"name":"Local: E","url":"/home/gabri/Maratona-CIn-2027/Homework_7/E.cpp","tests":[{"id":1794609008492,"input":"3\n2 5","output":"Samuell\n7"},{"id":1794609012800,"input":"2\n3 0","output":"Lleumas\n0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/gabri/Maratona-CIn-2027/Homework_7/E.cpp","group":"local","local":true}
